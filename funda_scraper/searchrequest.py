@@ -1,7 +1,7 @@
-from typing import List, Optional
+from typing import Optional
+
 
 class SearchRequest(object):
-
     def __init__(
         self,
         area: str,
@@ -100,7 +100,7 @@ class SearchRequest(object):
             "floor_area_down",
             "plot_area_down",
             "city_up",
-            "postal_code_up"
+            "postal_code_up",
         ]:
             return self.sort
         else:

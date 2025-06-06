@@ -3,6 +3,9 @@ requests>=2
 diot>=0.1.5
 PyYAML>=5.0
 tqdm>=4.42.0
-pandas>=1.2
+# Ensure pandas and numpy versions are compatible with
+# Python 3.11+ to avoid binary mismatch errors.
+pandas>=2.0.3,<2.1
+numpy>=2.2
 lxml>=4
-urllib3==1.26
+urllib3==1.26.18
