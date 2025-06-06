@@ -1,14 +1,24 @@
 """Main funda scraper module"""
 
+# ruff: noqa: E402
+
 import argparse
 import json
 import multiprocessing as mp
+import sys
 import uuid
 from collections import OrderedDict
 from typing import List
 from urllib.parse import urlparse, urlunparse
 
 import pandas as pd
+import six
+
+# ``requests`` expects ``urllib3.packages.six.moves`` to exist. When using a
+# modern ``urllib3`` this namespace is removed, so provide a lightweight alias
+# before importing ``requests``.  # noqa: E402
+sys.modules.setdefault("urllib3.packages.six.moves", six.moves)
+
 import requests
 from bs4 import BeautifulSoup
 from tqdm import tqdm
